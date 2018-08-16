@@ -1,0 +1,30 @@
+import React, { Component } from 'react';
+import "./components/Account/Account.scss"
+import AccountInfo from "./components/Account/AccountInfo/AccountInfo"
+import CreditCard from "./components/Account/CreditCard/CreditCard"
+import ChangePassword from "./components/Account/ChangePassword/ChangePassword"
+import LoginAndSignUp from "./components/Account/LoginAndSignUp/LoginAndSignUp"
+class App extends Component {
+  render() {
+    return (
+      <section id="layoutContainerWrapper">
+        <LoginAndSignUp><div className="Button">Sign in</div></LoginAndSignUp>
+        <section className="accountView">
+          <section className="first">
+            <h2>My Account</h2>
+            <nav>
+              <a href="/orders">My Orders</a>
+              <a href="/" className="signoutBtn" onClick={this.signOut}>Log Out</a>
+            </nav>
+          </section>
+          <AccountInfo />
+          <CreditCard />
+          <ChangePassword />
+        </section>
+      </section>
+
+    );
+  }
+}
+
+export default App;
